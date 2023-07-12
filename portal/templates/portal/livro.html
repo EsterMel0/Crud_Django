@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="header">
+    <h1><i class="fas fa-book"></i> BIBLIOTECA </h1>
+</div>
+
+<div class="card">
+    <div class="card-body">
+
+        <a class="btn btn-success" href="{% url 'livros' %}">Adicionar</a>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Capa</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Editora</th>
+                    <th>Data Lançamento</th>
+                    <th>N. Páginas</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for livro in livros %}
+                    <tr>
+                        <td>{{ livro.capa }}</td>
+                        <td>{{ livro.titulo }}</td>
+                        <td>{{ livro.autor }}</td>
+                        <td>{{ livro.editora }}</td>
+                        <td>{{ livro.data_lancamento |date:"d/m/Y"}}</td>
+                        <td>{{ livro.numero_paginas }}</td>
+                        <td>
+                            <a class="btn btn-warning" href="{% url 'autor_edit' autor.id %}">Editar</a>
+                            <a class="btn btn-danger" href="{% url 'autor_delete' autor.id %}" 
+                            onclick="return confirm('Tem certeza de que deseja deletar?')">Excluir</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="botao-voltar">
+    <a href="{% url 'home' %}">Voltar</a>
+</div>
+
+{% endblock content %}

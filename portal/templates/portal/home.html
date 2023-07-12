@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="header">
+
+    <h1>PORTAL DE LIVROS</h1>
+   
+</div>
+
+<div class="opcao1">
+    <i class="fas fa-user-edit"></i>
+    <a href="{% url 'autor' %}"> Ir para autores</a>
+</div>
+
+<div class="opcao2">
+    <i class="fas fa-pen-nib"></i>
+    <a href="{% url 'editora' %}"> Ir para editoras</a>
+</div>
+
+<div class="opcao3">
+    <i class="fas fa-book"></i>    
+    <a href="{% url 'livros' %}"> Ir para livros</a>
+</div>
+
+<div class="footer">
+    <h2>By Estefany Melo</h2>
+</div>
+
+   
+{% endblock content %}

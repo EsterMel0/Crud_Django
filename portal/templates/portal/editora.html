@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="header">
+        <h1><i class="fas fa-pen-nib"></i> EDITORAS</h1>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+
+            <a class="btn btn-success" href="{% url 'editora_add' %}">Adicionar</a>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Cidade</th>
+                        <th>Estado</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for editora in editoras %}
+                        <tr>
+                            <td>{{ editora.nome }}</td>
+                            <td>{{ editora.cidade }}</td>
+                            <td>{{ editora.estado }}</td>
+                            <td>
+                                <a class="btn btn-warning" href="{% url 'editora_edit' editora.id%}">Editar</a>
+                                <a class="btn btn-danger" href="{% url 'editora_delete' editora.id %}" 
+                                onclick="return confirm('Tem certeza de que deseja deletar?')">Excluir</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="botao-voltar">
+        <a href="{% url 'home' %}">Voltar</a>
+    </div>
+
+{% endblock content %}
