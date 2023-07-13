@@ -1,7 +1,7 @@
 # flake8:noqa
 
 from django.shortcuts import redirect, render
-from portal.forms import AutorForm, EditoraForm
+from portal.forms import AutorForm, EditoraForm, LivroForm
 from portal.models import Autor, Editora, Livro
 
 
@@ -131,6 +131,22 @@ def livro(request):
         'livro': livro
     }
     return render(request, 'portal/livro.html', context)
+
+
+def livro_add(request):
+    form = LivroForm(request.POST or None)
+
+    if request.POST:
+        if form.is_valid():
+            form.save()
+            return redirect('livros')
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'portal/livro-add.html', context)
+
 
 
 def formato(request):

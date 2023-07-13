@@ -1,0 +1,72 @@
+h1{
+    text-align: center;
+  }
+
+  h4{
+    padding-left: 3rem;
+  }
+
+  .header{
+    font-family: 'Roboto Serif', serif;
+    color: white;    
+    background: rgb(94, 121, 221);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .head{
+    font-family: 'Roboto Serif', serif;
+    color: white;
+    background: rgb(94, 121, 221);
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .footer{
+    background: rgb(94, 121, 221);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 26rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    text-align:center;
+    position: relative;
+  }
+
+  .opcao1, .opcao2, .opcao3{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background: rgba(0, 106, 255, 0.435);
+    margin-top: 4rem;
+    margin-left: 40rem;
+    margin-right: 40rem;
+    border-radius: 50px;
+    text-align: center;
+    font-family: 'Roboto Serif', serif;
+    font-size: 1.5rem;  
+  }
+
+  .opcao1, .opcao2, .opcao3, a{
+    text-decoration: none;
+    color:black;
+  }
+
+  .opcao1:hover, 
+  .opcao2:hover,  
+  .opcao3:hover{
+    transform: scale(1.02);
+  }
+
+
+  .botao-voltar{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: rgba(0, 106, 255, 0.435);
+    margin-top: 4rem;
+    margin-left: 50rem;
+    margin-right: 50rem;
+    border-radius: 50px;
+    text-align: center;
+    font-family: 'Roboto Serif', serif;
+    font-size: 1.5rem;  
+  }

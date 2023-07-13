@@ -2,23 +2,23 @@
 
 {% block content %}
 <div class="header">
-    <h1><i class="fas fa-book"></i> BIBLIOTECA </h1>
+    <h1><i class="fas fa-book"></i> MEUS LIVROS </h1>
 </div>
 
 <div class="card">
     <div class="card-body">
 
-        <a class="btn btn-success" href="{% url 'livros' %}">Adicionar</a>
+        <a class="btn btn-success" href="{% url 'livro_add' %}">Adicionar</a>
 
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Capa</th>
                     <th>Título</th>
+                    <th>Subtítulo</th>
+                    <th>Descrição</th>
                     <th>Autor</th>
                     <th>Editora</th>
-                    <th>Data Lançamento</th>
-                    <th>N. Páginas</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -28,10 +28,10 @@
                     <tr>
                         <td>{{ livro.capa }}</td>
                         <td>{{ livro.titulo }}</td>
+                        <td>{{ livro.subtitulo }}</td>
+                        <td>{{ livro.descricao }}</td>
                         <td>{{ livro.autor }}</td>
                         <td>{{ livro.editora }}</td>
-                        <td>{{ livro.data_lancamento |date:"d/m/Y"}}</td>
-                        <td>{{ livro.numero_paginas }}</td>
                         <td>
                             <a class="btn btn-warning" href="{% url 'autor_edit' autor.id %}">Editar</a>
                             <a class="btn btn-danger" href="{% url 'autor_delete' autor.id %}" 

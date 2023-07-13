@@ -44,5 +44,20 @@ class LivroForm(forms.ModelForm):
         widgets = {
             'titulo': forms.TextInput(
                 attrs={'class': 'form-control', 'autofocus': ''}
+            ),
+            'subtitulo': forms.TextInput(
+                attrs={'class': 'form-control', 'autofocus': ''}
+            ),
+            'autor': forms.TextInput(
+                attrs={'class': 'form-control', 'autofocus': ''}
+            ),
+            'descricao': forms.TextInput(
+                attrs={'class': 'form-control', 'autofocus': ''}
+            ),
+            'editora': forms.TextInput(
+                attrs={'class': 'form-control', 'autofocus': ''}
+            ),
+            'capa': forms.FileInput(
+                attrs={'class': 'span-2'}
             )
         }

@@ -32,4 +32,5 @@ urlpatterns = [
     path('editora/delete/<int:editora_pk>/', views.editora_delete, name="editora_delete"),
 
     path('livros/', views.livro, name="livros"),
+    path('livros/add/', views.livro_add, name="livro_add"),
 ]
