@@ -33,4 +33,6 @@ urlpatterns = [
 
     path('livros/', views.livro, name="livros"),
     path('livros/add/', views.livro_add, name="livro_add"),
+    path('livros/edit/<int:livro_pk>/', views.livro_edit, name="livro_edit"),
+    path('livros/delete/<int:livro_pk>', views.livro_delete, name="livro_delete"),
 ]

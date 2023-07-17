@@ -148,6 +148,32 @@ def livro_add(request):
     return render(request, 'portal/livro-add.html', context)
 
 
+def livro_edit(request, livro_pk):
+    livro = Livro.objects.get(pk=livro_pk)
+
+    form = LivroForm(request.POST or None, instance=livro)
+
+    if request.POST:
+        if form.is_valid():
+           form.save()
+           return redirect('livros')
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'portal/livro-edit.html', context)
+
+
+def livro_delete(request, livro_pk):
+    livro = Livro.objects.get(pk=livro_pk)
+
+    livro.delete()
+
+    return redirect('livros')
+
+
+
 
 def formato(request):
     return render(request, 'portal/formato.html')

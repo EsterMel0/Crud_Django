@@ -13,28 +13,23 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Capa</th>
                     <th>Título</th>
                     <th>Subtítulo</th>
-                    <th>Descrição</th>
                     <th>Autor</th>
                     <th>Editora</th>
                     <th>Ações</th>
                 </tr>
             </thead>
-
             <tbody>
-                {% for livro in livros %}
+                {% for item in livro %}
                     <tr>
-                        <td>{{ livro.capa }}</td>
-                        <td>{{ livro.titulo }}</td>
-                        <td>{{ livro.subtitulo }}</td>
-                        <td>{{ livro.descricao }}</td>
-                        <td>{{ livro.autor }}</td>
-                        <td>{{ livro.editora }}</td>
+                        <td>{{ item.titulo }}</td>
+                        <td>{{ item.subtitulo }}</td>
+                        <td>{{ item.autor }}</td>
+                        <td>{{ item.editora }}</td>
                         <td>
-                            <a class="btn btn-warning" href="{% url 'autor_edit' autor.id %}">Editar</a>
-                            <a class="btn btn-danger" href="{% url 'autor_delete' autor.id %}" 
+                            <a class="btn btn-warning" href="{% url 'livro_edit' item.id %}">Editar</a>
+                            <a class="btn btn-danger" href="{% url 'livro_delete' item.id %}" 
                             onclick="return confirm('Tem certeza de que deseja deletar?')">Excluir</a>
                         </td>
                     </tr>
