@@ -1,3 +1,4 @@
+# flake8: noqa
 """
 Django settings for projeto project.
 
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portal',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
