@@ -179,20 +179,3 @@ def livro_delete(request, livro_pk):
 
 def formato(request):
     return render(request, 'portal/formato.html')
-
-
-
-
-class AutorViewSet(viewsets.ModelViewSet):
-    queryset = Autor.objects.all()
-    serializer_class = AutorSerializer
-
-
-class EditoraViewSet(viewsets.ModelViewSet):
-    queryset = Editora.objects.all()
-    serializer_class = EditoraSerializer
-
-
-class livroViewSet(viewsets.ModelViewSet):
-    queryset = Livro.objects.all()
-    serializer_class = LivroSerializer
