@@ -3,6 +3,8 @@
 from django.shortcuts import redirect, render
 from portal.forms import AutorForm, EditoraForm, LivroForm
 from portal.models import Autor, Editora, Livro
+from rest_framework import viewsets
+from portal.serializers import AutorSerializer, EditoraSerializer, LivroSerializer
 
 
 # Create your views here.
@@ -179,3 +181,18 @@ def formato(request):
     return render(request, 'portal/formato.html')
 
 
+
+
+class AutorViewSet(viewsets.ModelViewSet):
+    queryset = Autor.objects.all()
+    serializer_class = AutorSerializer
+
+
+class EditoraViewSet(viewsets.ModelViewSet):
+    queryset = Editora.objects.all()
+    serializer_class = EditoraSerializer
+
+
+class livroViewSet(viewsets.ModelViewSet):
+    queryset = Livro.objects.all()
+    serializer_class = LivroSerializer
